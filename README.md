@@ -1,61 +1,52 @@
-# Ciblage de prospect pour DicreditBank
+# Prédiction de la consommation électrique pour ENERCOOP
 
-DiscreditBank souhaite cibler de nouveaux clients potentiels, plus particulièrement les jeunes en âge d'ouvrir leur tout premier compte bancaire.
+##Mise en situation
 
-Cependant, elle souhaite cibler les prospects les plus susceptibles d'avoir, plus tard dans leur vie, de hauts revenus.
+Vous êtes employé chez Enercoop, société coopérative qui s'est développée grâce à la libéralisation du marché de l’électricité en France. Elle est spécialisée dans les énergies renouvelables.
 
-L'équipe dans laquelle vous travaillez a donc reçu pour mission de créer un modèle permettant de déterminer le revenu potentiel d'une personne.
+La plupart de ces énergies renouvelables est cependant intermittente, il est donc difficile de prévoir les capacités de production d'électricité. De plus, la demande en électricité des utilisateurs varie au cours du temps, et dépend de paramètres comme la météo (température, luminosité, etc.) Tout le challenge est de mettre en adéquation l'offre et la demande !
 
-Ainsi, vous proposez une régression linéaire avec 3 variables :
+##Les données
 
-    - le revenu des parents,
-    - le revenu moyen du pays dans lequel habite le prospect,
-    - l'indice de Gini calculé sur les revenus des habitants du pays en question. 
+Vous téléchargerez les données de consommation d'électricité mensuelles à partir de cette page : http://www.rte-france.com/fr/eco2mix/eco2mix-telechargement
 
+Les données météo que vous utiliserez pour corriger les données de l'effet température sont présentes ici : https://cegibat.grdf.fr/simulateur/calcul-dju
+Votre mission
+
+Vous vous concentrerez uniquement sur la prédiction de la demande en électricité.
+
+##Missions
+
+    Corrigez les données de consommation mensuelles de l'effet température (dues au chauffage électrique) en utilisant une régression linéaire.
+    Effectuez une désaisonnalisation de la consommation que vous aurez obtenue après correction, grâce aux moyennes mobiles.
+    Effectuez une prévision de la consommation (corrigée de l'effet température) sur un an, en utilisant la méthode de Holt Winters (lissage exponentiel) puis la méthode ARMA sur la série temporelle désaisonnalisée.
+
+Pour chaque traitement effectué (correction de l'effet température, désaisonnalisation, etc.), vous présenterez les 2 séries temporelles avant et après traitement, sur un graphique où les deux séries temporelles seront superposées.
 
 ## Getting Started (=Avant de commencer)
 
-- Installer requirements 
-
 ### Prerequisites (=Pré-requis)
 
-Installer :
-- Python 3.5
-
-Et installer les libraires suivantes :
-- Jupyter Notebook 5.4.1
-- Pandas 0.22.0
-- Numpy 1.14.2
-- SciPy 1.0.0
-- MatplotLib 2.2.2
-- Scikit-Learn 0.19.1
-- StatsModels 0.9.0
+- Installer requirements 
+- Visualiser la présentation avec Microsoft Sway
 
 ## Arborescense 
 Dossier notebook : Contient le programme.
 Dossier fichiers_csv : Contient les données utilisées.
 Dossier presentation : Contient la présentation pdf et les images associées à cette présentation.
-Dossier code : Contient le programme de génération des revenus des parents, le code R des indices de gini provenant de la source additionnelle, le programme de construction des analyses univariée et bivariée.
+
 Dossier documents : Contient les ressources utilisées.
 
 ## Running
 
 1. Pour réaliser la modélisation, ouvrez le notebook Jupyter (dossier 'notebook')et faites "run all".
 
-Note : Étant donnée que les echantillons de revenus parents sont générés aléatoirement, il se peut que les résultats des modélisations ne soient pas identiques à ceux visibles dans la présentation. Ils resteront toutefois proches.
-
-
-
 
 ## Built With (=Fabriquer avec)
 
 * [Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/) - The  web-based application suitable for capturing the whole computation process.
-* [Pandas](https://pandas.pydata.org/pandas-docs/stable/) -  It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python
-* [Numpy](http://www.numpy.org/) - NumPy is the fundamental package for scientific computing with Python.
-*[Matplotlib](https://matplotlib.org/#) - Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
-*[Scipy](https://docs.scipy.org/doc/scipy/reference/index.html) - SciPy (pronounced “Sigh Pie”) is open-source software for mathematics, science, and engineering.
-*[Scikit-Learn](http://scikit-learn.org/stable/index.html) - Simple and efficient tools for data mining and data analysis.
-*[StatsModels](http://www.statsmodels.org/stable/install.html) - Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration.
+* [R](https://www.r-project.org/) -  R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.
+
 
 
 
