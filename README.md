@@ -1,12 +1,12 @@
 # Prédiction de la consommation électrique pour ENERCOOP
 
-##Mise en situation
+## Mise en situation
 
 Vous êtes employé chez Enercoop, société coopérative qui s'est développée grâce à la libéralisation du marché de l’électricité en France. Elle est spécialisée dans les énergies renouvelables.
 
 La plupart de ces énergies renouvelables est cependant intermittente, il est donc difficile de prévoir les capacités de production d'électricité. De plus, la demande en électricité des utilisateurs varie au cours du temps, et dépend de paramètres comme la météo (température, luminosité, etc.) Tout le challenge est de mettre en adéquation l'offre et la demande !
 
-##Les données
+## Les données
 
 Vous téléchargerez les données de consommation d'électricité mensuelles à partir de cette page : http://www.rte-france.com/fr/eco2mix/eco2mix-telechargement
 
@@ -15,7 +15,7 @@ Votre mission
 
 Vous vous concentrerez uniquement sur la prédiction de la demande en électricité.
 
-##Missions
+## Missions
 
     Corrigez les données de consommation mensuelles de l'effet température (dues au chauffage électrique) en utilisant une régression linéaire.
     Effectuez une désaisonnalisation de la consommation que vous aurez obtenue après correction, grâce aux moyennes mobiles.
